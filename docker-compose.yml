@@ -6,8 +6,15 @@ services:
       context: .
     networks:
       - testnet
-    # depends_on:
-    #   -
+    depends_on:
+      - test_server
+  test_server:
+    build:
+      context: test-server
+    ports:
+      - 8888:8888
+    networks:
+      - testnet
 
 networks:
   testnet:
