@@ -1,0 +1,14 @@
+version: '3.2'
+
+services:
+  filebeat:
+    build:
+      context: .
+    networks:
+      - testnet
+    # depends_on:
+    #   -
+
+networks:
+  testnet:
+    driver: bridge
